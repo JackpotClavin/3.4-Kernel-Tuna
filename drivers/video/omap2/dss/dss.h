@@ -167,9 +167,6 @@ struct regulator *dss_get_vdds_sdi(void);
 void dss_apply_init(void);
 int dss_mgr_wait_for_go(struct omap_overlay_manager *mgr);
 int dss_mgr_wait_for_go_ovl(struct omap_overlay *ovl);
-void dss_setup_partial_planes(struct omap_dss_device *dssdev,
-				u16 *x, u16 *y, u16 *w, u16 *h,
-				bool enlarge_update_area);
 void dss_mgr_start_update(struct omap_overlay_manager *mgr);
 int omap_dss_mgr_apply(struct omap_overlay_manager *mgr);
 
@@ -412,7 +409,6 @@ void dispc_disable_sidle(void);
 void dispc_lcd_enable_signal_polarity(bool act_high);
 void dispc_lcd_enable_signal(bool enable);
 void dispc_pck_free_enable(bool enable);
-void dispc_set_lcd_size(enum omap_channel channel, u16 width, u16 height);
 void dispc_set_digit_size(u16 width, u16 height);
 void dispc_enable_fifomerge(bool enable);
 void dispc_enable_gamma_table(bool enable);

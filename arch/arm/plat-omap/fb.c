@@ -53,10 +53,6 @@ static struct platform_device omap_fb_device = {
 	.num_resources = 0,
 };
 
-void omapfb_set_platform_data(struct omapfb_platform_data *data)
-{
-}
-
 void __init omapfb_set_lcd_config(const struct omap_lcd_config *config)
 {
 	omapfb_config.lcd = *config;
@@ -93,11 +89,6 @@ static struct platform_device omap_fb_device = {
 	.num_resources = 0,
 };
 
-void omapfb_set_platform_data(struct omapfb_platform_data *data)
-{
-	omapfb_config = *data;
-}
-
 static int __init omap_init_fb(void)
 {
 	return platform_device_register(&omap_fb_device);
@@ -106,10 +97,6 @@ static int __init omap_init_fb(void)
 arch_initcall(omap_init_fb);
 
 #else
-
-void omapfb_set_platform_data(struct omapfb_platform_data *data)
-{
-}
 
 void __init omapfb_set_lcd_config(const struct omap_lcd_config *config)
 {
